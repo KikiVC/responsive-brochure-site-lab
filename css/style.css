@@ -30,7 +30,7 @@ img {
 header {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(/images/ArticleMain_02.png) center/cover no-repeat fixed;
+    url(/images/banner-bg.jpg) center/cover no-repeat fixed;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -39,7 +39,6 @@ header {
   background: rgba(0, 0, 0, 0.6);
   padding: 1.2rem;
 }
-
 .navbar-brand {
   color: #fff;
   font-size: 2rem;
@@ -80,83 +79,98 @@ header {
   font-size: 3rem;
   font-family: var(--Playfair);
   line-height: 1.2;
+  overflow-wrap: break-word;
 }
 .banner-title span {
   font-family: var(--Playfair);
-  color: var(--exDark);
+  color: #f8b900;
 }
 .banner p {
   padding: 1rem 0 2rem 0;
-  font-size: 1.2rem;
-  text-transform: capitalize;
+  font-size: 1.5rem;
+  text-transform: none;
   font-family: var(--Roboto);
   font-weight: 300;
   word-spacing: 2px;
 }
 
-/* design */
-.design {
-  padding: 4.5rem 0;
-}
+/* albums title */
+
 .title {
-  text-align: center;
+  text-align: left;
   padding: 1rem 0;
 }
 .title h2 {
   font-family: var(--Playfair);
   font-size: 2.4rem;
+  overflow: wrap;
 }
 .title p {
-  text-transform: uppercase;
-  padding: 0.6rem o;
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-transform: capitalize;
+  overflow: wrap;
 }
-.design-content {
-  margin: 2rem;
+.title span {
+  font-family: var(--Playfair);
+  color: #f8b900;
 }
-.design-item {
-  cursor: pointer;
-  margin: 1.5rem 0;
+
+hr {
+  height: 0.6em;
+  color: #2b2b2b;
+  margin-top: 1.5rem;
+  background-color: #2b2b2b;
 }
-.design-img {
+/* albums */
+.album {
+  background: #f9f9f9;
+  padding: 4.5rem 0;
+}
+.album-content {
+  margin: 2rem 0;
+}
+.album-img {
   position: relative;
-  overflow: hidden;
 }
-.design-img::after {
+.album-img span {
   position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-}
-.design-img img {
-  transition: all 0.5s ease;
-}
-.design-item:hover img {
-  transform: scale(1.2);
-}
-.design-img span {
-  position: absolute;
-  z-index: 2;
   bottom: 10px;
   right: 10px;
+  background: var(--exDark);
   color: #fff;
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
+  padding: 0.3rem 0.6rem;
 }
-.design-title {
-  padding: 1rem;
-  font-size: 1.2rem;
-  text-align: center;
-  width: 70%;
-  margin: 0 auto;
+.album-text {
+  margin: 2.2rem 0;
+  padding: 0 1rem;
 }
-.design-title a {
-  color: var(--dark);
-  text-decoration: none;
-  text-transform: capitalize;
+.album-text h2 {
   font-family: var(--Playfair);
+  padding: 1rem 0;
+  font-size: 1.65rem;
+  font-weight: 500;
+}
+.album-text p {
+  font-weight: 300;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  padding-bottom: 1.2rem;
+}
+.album-text a {
+  font-family: var(--Roboto);
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--dark);
+  display: inline-block;
+  background: var(--dark);
+  color: #fff;
+  padding: 0.55rem 1.2rem;
+  transition: all 0.5s ease;
+}
+.album-text a:hover {
+  background: var(--exDark);
 }
 
 /* footer */
@@ -169,7 +183,7 @@ footer {
 .social-links {
   display: flex;
   justify-content: center;
-  margin-bottom: 1.4 rem;
+  margin-bottom: 1.4rem;
 }
 .social-links a {
   border: 2px solid #fff;
@@ -183,7 +197,18 @@ footer {
   border-radius: 50%;
   text-decoration: none;
   margin: 0 0.3rem;
-  transform: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.social-links a:hover {
+  background: #fff;
+  color: var(--exDark);
+}
+.footer span {
+  margin-top: 1rem;
+  display: block;
+  font-family: var(--Playfair);
+  letter-spacing: 2px;
 }
 
 /* Media Queries */
@@ -195,12 +220,6 @@ footer {
   .banner-title {
     font-size: 5rem;
   }
-  .banner form {
-    margin-top: 1.4rem;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 @media screen and (min-width: 768px) {
@@ -209,18 +228,15 @@ footer {
     align-items: center;
     justify-content: space-between;
   }
-  .design-content {
+  .album-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
-  .design-item {
-    margin: 0;
-  }
 }
 
-@media screen and (min-width: 1200px) {
-  .design-content {
+@media screen and (min-width: 992px) {
+  .album-content {
     grid-template-columns: repeat(3, 1fr);
   }
 }
